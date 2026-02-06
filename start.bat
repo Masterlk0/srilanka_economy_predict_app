@@ -1,11 +1,13 @@
 @echo off
-echo Starting Sri Lanka Economy Predictor...
+echo ========================================
+echo Sri Lanka Economy Predictor
+echo ========================================
 echo.
-
+echo Starting backend server...
 start /B python backend.py
-timeout /t 2 /nobreak >nul 2>&1
+timeout /t 3 /nobreak >nul 2>&1
 
-echo Backend started on http://localhost:5000
+echo Backend: http://localhost:5000
 echo Starting frontend...
 echo.
 
