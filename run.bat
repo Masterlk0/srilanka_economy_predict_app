@@ -1,14 +1,14 @@
 @echo off
-echo Installing backend dependencies...
-pip install flask flask-cors pandas numpy scikit-learn
-
-echo Installing frontend dependencies...
-call npm install
+echo Starting Sri Lanka Economy Predictor...
+echo.
 
 echo Starting backend server...
 start python backend.py
 
-timeout /t 3
+timeout /t 3 /nobreak
 
+echo Backend started on http://localhost:5000
 echo Starting React app...
+echo.
+
 npm start
