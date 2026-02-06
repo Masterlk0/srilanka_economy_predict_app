@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './App.css';
 
 function App() {
@@ -117,15 +117,21 @@ function App() {
 
         <div className="chart-section">
           <h3>📊 Historical & Predicted GDP Growth</h3>
-          <LineChart width={800} height={400} data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="Year" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="GDP Growth" stroke="#FF6B35" strokeWidth={3} name="Historical" />
-            <Line type="monotone" dataKey="Predicted GDP Growth" stroke="#4CAF50" strokeWidth={3} name="Predicted" connectNulls={false} />
-          </LineChart>
+          {chartData.length > 0 ? (
+            <ResponsiveContainer width="100%" height={400}>
+              <LineChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="Year" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="GDP Growth" stroke="#FF6B35" strokeWidth={3} name="Historical" />
+                <Line type="monotone" dataKey="Predicted GDP Growth" stroke="#4CAF50" strokeWidth={3} name="Predicted" connectNulls={false} />
+              </LineChart>
+            </ResponsiveContainer>
+          ) : (
+            <p>Loading chart...</p>
+          )}
         </div>
       </div>
     </div>

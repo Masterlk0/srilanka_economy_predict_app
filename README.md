@@ -1,5 +1,18 @@
 # Sri Lanka Economy Predictor
 
+## Quick Start (One Command)
+
+```bash
+start.bat
+```
+
+OR
+
+```bash
+npm install
+npm run dev
+```
+
 ## Deploy to Vercel
 
 1. Push code to GitHub
